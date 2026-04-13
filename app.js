@@ -87,25 +87,29 @@ document.addEventListener('DOMContentLoaded', function () {
 const html = document.documentElement;
 const toggleBtn = document.querySelector('#themeBtn');
 let logoDT = document.querySelector('.logo__img-dt');
+let logoMBBN = document.querySelector('.logo__img-mb');
 
-const setTheme = (theme,img) => {
+const setTheme = (theme,img,imgMBBN) => {
     html.setAttribute('data-theme',theme);
     logoDT.src = img;
+    logoMBBN.src = imgMBBN;
     localStorage.setItem('theme',theme);
     localStorage.setItem('img',img);
+    localStorage.setItem('imgMBBN',imgMBBN);
 }
 
 const savedTheme = localStorage.getItem('theme');
 const savedImg = localStorage.getItem('img');
+const savedImgMBBN = localStorage.getItem('imgMBBN');
 
 if (savedTheme){
-    setTheme(savedTheme,savedImg);
+    setTheme(savedTheme,savedImg,savedImgMBBN);
 }
 else if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches){
-    setTheme('dark','img/orinoco-tech__logoBlanco.png');
+    setTheme('dark','img/orinoco-tech__logoBlanco.png', 'img/orinoco-techBNMB.png');
 }
 else{
-    setTheme('ligth','img/orinoco tech.png');
+    setTheme('ligth','img/orinoco tech.png','img/logoHorizontal.png');
 }
 
 toggleBtn.addEventListener('click', () =>{
@@ -113,13 +117,15 @@ toggleBtn.addEventListener('click', () =>{
     if(current==='dark'){
         newTheme = 'light';
         newImg = 'img/orinoco tech.png';
+        newImgMBBN = 'img/logoHorizontal.png';
     }
     else{
         newTheme = 'dark';
         newImg = 'img/orinoco-tech__logoBlanco.png';
+        newImgMBBN = 'img/orinoco-techBNMB.png';
     }
 
-    setTheme(newTheme,newImg)
+    setTheme(newTheme,newImg,newImgMBBN)
 })
 
 
