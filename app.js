@@ -127,13 +127,3 @@ toggleBtn.addEventListener('click', () =>{
 
     setTheme(newTheme,newImg,newImgMBBN)
 })
-
-
-// lottie file
-
-const player = document.querySelector('lottie-player');
-
-player.addEventListener('ready', () => {
-    // Supongamos que quieres que solo juegue del frame 0 al 120
-    player.getLottie().playSegments([0, 60], true);
-    });
