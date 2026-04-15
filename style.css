@@ -229,7 +229,7 @@ header.abajo .mobile-menu-btn span {
 
 /* Hero Section */
 .hero {
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7) 30%, rgba(0, 0, 0, 0) 60%), url(img/HeroOFT2.jpeg);
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7) 30%, rgba(0, 0, 0, 0) 60%), url("img/heroOFTfinal.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -551,6 +551,10 @@ img.about_info__img {
 
 [data-theme='dark'] .about-text {
     color: var(--primary);
+}
+
+.about-text .value-item p{
+    color: var(--gray);
 }
 
 /* About Section */
@@ -1491,6 +1495,8 @@ footer {
 
     .certifications__features-grid {
         grid-template-columns: 1fr;
+        max-width: 600px;
+        margin: auto;
     }
 
     .team .container {
@@ -1521,12 +1527,26 @@ footer {
 button#mobileMenuBtn {
     order: 2;
     margin: 0;
-    margin-left: 10px;
+    margin-left: 20px;
 }
 div#themeBtn {
     order: 1;
     margin-left: auto;
 }
+
+.services {
+max-width: 600px;
+    margin: auto;
+}
+
+.services .container{
+    padding: 0px;
+}
+
+.block__img-byd {
+    object-position: center;
+}
+
 }
 
 /* Mobile Small */
