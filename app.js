@@ -109,14 +109,14 @@ else if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').m
     setTheme('dark','img/orinoco-tech__logoBlanco.png', 'img/orinoco-techBNMB.png');
 }
 else{
-    setTheme('ligth','img/orinoco tech.png','img/logoHorizontal.png');
+    setTheme('ligth','img/logoOFT.svg','img/logoHorizontal.png');
 }
 
 toggleBtn.addEventListener('click', () =>{
     const current = html.getAttribute('data-theme');
     if(current==='dark'){
         newTheme = 'light';
-        newImg = 'img/orinoco tech.png';
+        newImg = 'img/logoOFT.svg';
         newImgMBBN = 'img/logoHorizontal.png';
     }
     else{

@@ -229,7 +229,7 @@ header.abajo .mobile-menu-btn span {
 
 /* Hero Section */
 .hero {
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7) 30%, rgba(0, 0, 0, 0) 60%), url("img/heroOFTfinal.png");
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7) 30%, rgba(0, 0, 0, 0) 50%), url("img/heroOFTfinalmas\ brillo.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
