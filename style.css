@@ -401,7 +401,7 @@ header.abajo .mobile-menu-btn span {
 }
 
 .features__card-wrapper:nth-child(2) .feature-card__img {
-    object-position: 0 30%;
+    object-position: 0 72%;
 }
 
 .features__card-wrapper:nth-child(1) .feature-card__img {
@@ -409,7 +409,7 @@ header.abajo .mobile-menu-btn span {
 }
 
 .features__card-wrapper:nth-child(3) .feature-card__img {
-    object-position: 0 60%;
+    object-position: 0 80%;
 }
 
 /* CARRUSEL INFINITO LOGO*/
@@ -562,6 +562,27 @@ img.about_info__img {
 }
 
 /* About Section */
+        .value-item {
+        display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+        }
+    .value-item .about_info__img {
+    width: 20px !important;
+    height: 20px !important;
+    margin-top: 3px;
+        object-fit:cover;
+    min-height:auto;
+    object-position:unset;
+    }
+    .value-item span{
+        font-weight: bold;
+        color: var(--gray-dark);
+    }
+
+    .aboutLottie{
+        width: 100px;
+    }
 /* .about {
             padding: 80px 0;
         }
@@ -1249,6 +1270,31 @@ footer {
             0%{transform:translateY(0)}
             100%{transform:translateY(-160px)}
         } */
+
+
+        /* CONTADOR */
+
+        .contador .container {
+            margin-top: 80px;
+    display: flex;
+}
+
+.contador_item {
+    text-align: center;
+}
+
+.odometer{
+    font-size: 70px;
+    font-weight: 700;
+}
+
+.contador__signos{
+    display: flex;
+        justify-content: center;
+    align-items: center;
+    font-size: 70px;
+    font-weight: 700;
+}
 
 @keyframes spin {
     from {
