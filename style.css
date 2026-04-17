@@ -1277,6 +1277,8 @@ footer {
         .contador .container {
             margin-top: 80px;
     display: flex;
+    justify-content: center;
+    gap: 80px;
 }
 
 .contador_item {
