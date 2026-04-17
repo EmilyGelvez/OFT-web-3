@@ -29,7 +29,7 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Titillium Web', 'Inter', sans-serif;
     line-height: 1.6;
     color: var(--gray-dark);
     background-color: var(--white);
@@ -155,7 +155,7 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     color: var(--primary);
-    font-weight: 500;
+    font-weight: 600;
     transition: color 0.3s;
     font-size: 15px;
 }
@@ -185,7 +185,7 @@ nav ul li a:hover {
     border: 1px solid var(--primary);
     color: var(--primary);
     margin-right: 10px;
-    font-weight: 900;
+    font-weight: 700;
 }
 
 .btn-outline:hover {
@@ -229,7 +229,7 @@ header.abajo .mobile-menu-btn span {
 
 /* Hero Section */
 .hero {
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7) 30%, rgba(0, 0, 0, 0) 50%), url("img/heroOFTfinalmas\ brillo.png");
+        background-image: linear-gradient(to right, rgb(12 30 60) 30%, rgb(12, 30, 60, 0.9) 35%, rgba(0, 0, 0, 0) 50%), url(img/heroOFTfinalmas\ brillo.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -240,14 +240,18 @@ header.abajo .mobile-menu-btn span {
 }
 
 .hero-content {
-    max-width: 650px;
+    max-width: 450px;
     position: relative;
     z-index: 1;
+    /* background: rgb(12, 30, 60, 0.7);
+    padding: 30px;
+    border-radius: 8px;
+    backdrop-filter: blur(3px); */
 }
 
 .hero h1 {
-    font-size: 36px;
-    font-weight: 700;
+    font-size: 40px;
+    font-weight: 400;
     line-height: 1.2;
     margin-bottom: 20px;
 }
@@ -380,7 +384,7 @@ header.abajo .mobile-menu-btn span {
 .feature-card h3 {
     font-size: 20px;
     font-weight: 600;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     color: var(--primary);
 }
 
