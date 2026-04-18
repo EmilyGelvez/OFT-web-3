@@ -133,33 +133,26 @@ toggleBtn.addEventListener('click', () =>{
 window.addEventListener('load', () => {
     const elementosOdometer = document.querySelectorAll('.odometer-multiple');
 
-    // Usamos (el, index) para saber en qué posición está cada contador
-    elementosOdometer.forEach((el, index) => {
-        
-        new Odometer({
+    elementosOdometer.forEach((el) => {
+        const od = new Odometer({
             el: el,
             value: 0,
-            format: '(,ddd)', 
+            format: '(.ddd)', // Cambiado de (,ddd) a (.ddd)
             theme: 'minimal'
         });
 
-        let valorActual = parseInt(el.getAttribute('data-valor'));
-
-        // 1. Animación inicial desfasada (uno tras otro)
-        setTimeout(() => {
-            el.innerHTML = valorActual;
-        }, 500 + (index * 300)); // El primero a los 500ms, el segundo a los 800ms...
-
-        // 2. Aumento constante desincronizado
-        // Creamos un desfase inicial aleatorio para que no suban al mismo tiempo
-        const desfaseInicial = index * 800; 
+        const valorFinal = el.getAttribute('data-valor');
 
         setTimeout(() => {
-            setInterval(() => {
-                const aumento = Math.floor(Math.random() * 5) + 1;
-                valorActual += aumento;
-                el.innerHTML = valorActual;
-            }, 3000 + (Math.random() * 1000)); // El intervalo también varía un poco (aprox 3-4 seg)
-        }, desfaseInicial);
+            el.innerHTML = valorFinal;
+        }, 500);
     });
+
+    setInterval(() => {
+        elementosOdometer.forEach((el) => {
+            // Importante: Al leer el valor, ahora debemos limpiar los puntos
+            let actual = parseInt(el.innerHTML.replace(/\./g, '')); 
+            el.innerHTML = actual + Math.floor(Math.random() * 5);
+        });
+    }, 3000);
 });

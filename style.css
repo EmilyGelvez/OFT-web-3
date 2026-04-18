@@ -229,7 +229,7 @@ header.abajo .mobile-menu-btn span {
 
 /* Hero Section */
 .hero {
-        background-image: linear-gradient(to right, rgb(12 30 60) 30%, rgb(12, 30, 60, 0.9) 35%, rgba(0, 0, 0, 0) 50%), url(img/heroOFTfinalmas\ brillo.png);
+        background-image: linear-gradient(to right, rgb(12 30 60) 30%, rgb(12, 30, 60, 0.9) 35%, rgba(0, 0, 0, 0) 50%), url(img/herofinalfinal.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -481,7 +481,7 @@ header.abajo .mobile-menu-btn span {
 
 .about-card .section-header {
     text-align: left;
-    margin: 0 auto 10px;
+    margin: 0 auto 20px;
 }
 
 .about-grid {
@@ -739,18 +739,8 @@ img.about_info__img {
     background-color: var(--gray-light);
     margin: 80px 0;
 }
+.block__img-byd
 
-img.block__img.block__img-pys {
-    object-position: 0px -170px;
-}
-
-.block__img-sep {
-    object-position: 0px -120px;
-}
-
-.block__img-byd {
-    object-position: -80px 0px;
-}
 
 /* Certifications Section */
 .certifications {
