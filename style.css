@@ -229,7 +229,7 @@ header.abajo .mobile-menu-btn span {
 
 /* Hero Section */
 .hero {
-        background-image: linear-gradient(to right, rgb(12 30 60) 30%, rgb(12, 30, 60, 0.9) 35%, rgba(0, 0, 0, 0) 50%), url(img/herofinalfinal.png);
+        background-image: linear-gradient(to right, rgb(12 30 60) 30%, rgb(12, 30, 60, 0.9) 35%, rgba(0, 0, 0, 0) 50%), url(img/hero\ chatGPTsinletras.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
