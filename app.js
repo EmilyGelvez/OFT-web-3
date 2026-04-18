@@ -130,29 +130,66 @@ toggleBtn.addEventListener('click', () =>{
 
 
 // Contador
+// window.addEventListener('load', () => {
+//     const elementosOdometer = document.querySelectorAll('.odometer-multiple');
+
+//     elementosOdometer.forEach((el) => {
+//         const od = new Odometer({
+//             el: el,
+//             value: 0,
+//             format: '(.ddd)', // Cambiado de (,ddd) a (.ddd)
+//             theme: 'minimal'
+//         });
+
+//         const valorFinal = el.getAttribute('data-valor');
+
+//         setTimeout(() => {
+//             el.innerHTML = valorFinal;
+//         }, 500);
+//     });
+
+//     setInterval(() => {
+//         elementosOdometer.forEach((el) => {
+//             // Importante: Al leer el valor, ahora debemos limpiar los puntos
+//             let actual = parseInt(el.innerHTML.replace(/\./g, '')); 
+//             el.innerHTML = actual + Math.floor(Math.random() * 5);
+//         });
+//     }, 3000);
+// });
+
 window.addEventListener('load', () => {
     const elementosOdometer = document.querySelectorAll('.odometer-multiple');
 
     elementosOdometer.forEach((el) => {
-        const od = new Odometer({
+        // Inicializamos la estructura del Odometer en 0
+        el.odInstance = new Odometer({
             el: el,
             value: 0,
-            format: '(.ddd)', // Cambiado de (,ddd) a (.ddd)
+            format: '(.ddd)',
             theme: 'minimal'
         });
-
-        const valorFinal = el.getAttribute('data-valor');
-
-        setTimeout(() => {
-            el.innerHTML = valorFinal;
-        }, 500);
     });
 
-    setInterval(() => {
-        elementosOdometer.forEach((el) => {
-            // Importante: Al leer el valor, ahora debemos limpiar los puntos
-            let actual = parseInt(el.innerHTML.replace(/\./g, '')); 
-            el.innerHTML = actual + Math.floor(Math.random() * 5);
+    const observerOptions = {
+        threshold: 0.3 // Se activa cuando el 30% es visible
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const el = entry.target;
+            const valorFinal = el.getAttribute('data-valor');
+
+            if (entry.isIntersecting) {
+                // Al entrar: sube del valor actual (0) al valor final y SE QUEDA AHÍ
+                setTimeout(() => {
+                    el.innerHTML = valorFinal;
+                }, 100);
+            } else {
+                // Al salir: reseteamos a 0 para que la animación se repita al volver
+                el.innerHTML = 0;
+            }
         });
-    }, 3000);
+    }, observerOptions);
+
+    elementosOdometer.forEach(el => observer.observe(el));
 });
