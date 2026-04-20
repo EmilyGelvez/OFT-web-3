@@ -1374,6 +1374,9 @@ footer {
             MAX-WIDTH: 600px;
         margin: auto;
 }
+.contador .container {
+    flex-direction: column;
+}
 }
 
 /* Mobile Large */
