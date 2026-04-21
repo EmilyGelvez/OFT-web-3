@@ -409,7 +409,7 @@ header.abajo .mobile-menu-btn span {
 }
 
 .features__card-wrapper:nth-child(3) .feature-card__img {
-    object-position: 0 80%;
+    object-position: bottom;
 }
 
 /* CARRUSEL INFINITO LOGO*/
