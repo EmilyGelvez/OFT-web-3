@@ -1042,13 +1042,13 @@ footer {
 
 .block {
     width: 100%;
-}
-
-.block {
+    position: relative; /* Esencial para el position: absolute del hijo */
+    overflow: hidden; /* Oculta el contenido que se desliza */
     animation: appear linear;
     animation-timeline: view();
     animation-range: entry 0 cover 40%;
-    overflow: hidden;
+    transform: translateZ(0); 
+    -webkit-transform: translateZ(0);
 }
 
 .block__img {
@@ -1070,31 +1070,54 @@ footer {
 .block__contentTarget {
     position: absolute;
     width: 95%;
-    background-color: rgba(42, 42, 42, 0.41);
-    height: auto;
-    max-height: 40px;
-    bottom: 0;
-    transition: .3s;
-    color: var(--blue-text);
+    background-color: rgba(0, 0, 0, 0.3);
+    -webkit-backdrop-filter: blur(2px);
     backdrop-filter: blur(2px);
-    border-radius: 8px 8px 0 0;
-    margin: 0 auto;
-    left: 0;
-    right: 0;
+    
+    /* Cambiamos height por max-height para permitir el ajuste automático */
+    height: auto; 
+    min-height: 40px; /* Altura mínima para el tab inicial */
+    max-height: 40px; /* Limitamos al inicio */
+    
+    bottom: 10px; /* Un pequeño margen para que no toque el borde inferior */
+    left: 50%;
+    transform: translateX(-50%) translateZ(0); /* Centrado perfecto y estabilidad Safari */
+    -webkit-transform: translateX(-50%) translateZ(0);
+    
+    transition: max-height 0.5s ease-in-out, background-color 0.3s ease;
+    
+    color: var(--white-text);
+    border-radius: 8px; /* Redondeado completo queda mejor para este estilo */
     padding: 10px 15px;
+    overflow: hidden;
+    z-index: 10;
 }
 
 .block:hover .block__contentTarget {
-    background: #fff;
-    max-height: 200px;
+    background: #ffffff;
+    
+    /* El truco: un max-height superior al contenido real */
+    /* Safari ajustará el cuadro blanco al tamaño del texto dentro de este límite */
+    max-height: 400px; 
+    
+    color: var(--blue-text);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .block__contentTarget h4 {
-    color: var(--white-text);
+    margin: 0;
+    color: inherit; /* Hereda blanco del padre oscuro */
+    transition: color 0.3s ease;
 }
-
 .block:hover .block__contentTarget h4 {
-    color: var(--blue-text);
+    color: var(--blue-text); /* Azul sobre blanco */
+}
+.block:hover .block__contentTarget h4 {
+    white-space: normal; /* Permite que el texto fluya cuando ya hay espacio */
+}
+.block:hover .block__contentTarget p {
+    opacity: 1; /* Se hace visible */
+    color: var(--gray-dark); /* Color de texto legible */
 }
 
 /* Quienes somos */
