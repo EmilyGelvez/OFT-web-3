@@ -577,7 +577,7 @@ img.about_info__img {
     }
     .value-item span{
         font-weight: bold;
-        color: var(--gray-dark);
+        color: var(--primary);
     }
 
     .aboutLottie{
@@ -1286,6 +1286,10 @@ footer {
     align-items: center;
     font-size: 70px;
     font-weight: 700;
+}
+
+section.contador {
+    color: var(--primary);
 }
 
 @keyframes spin {
