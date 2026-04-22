@@ -1432,7 +1432,7 @@ section.contador {
 
     nav {
         position: fixed;
-        top: 60px;
+        top: 70px;
         left: 0;
         width: 100%;
         background: var(--white);
@@ -1462,7 +1462,7 @@ section.contador {
         display: block;
         padding: 10px 0;
         font-size: 16px;
-        color: var(--gray-dark);
+        color: var(--primary);
     }
 
     .header-actions {
